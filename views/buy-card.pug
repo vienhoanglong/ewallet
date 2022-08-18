@@ -1,0 +1,77 @@
+extends ./layouts/layout
+
+block vars
+	-title = 'Buy card'
+	-bodyClass = ''
+	
+block content
+	block header
+		include ./blocks/header 
+	block sidebar
+		include ./blocks/sidebar
+	.content
+		.buy_card
+			h3 Choose a supplier
+			.card_supplier
+				label.card(for="viettel") 
+					input.check_sup#viettel(type='radio' name='supplier' value='Viettel')
+					img.img_card(src="/images/viettel.png", alt="viettel")
+				label.card(for="mobifone") 
+					input.check_sup#mobifone(type='radio' name='supplier' value='Mobifone')
+					img.img_card(src="/images/mobifone.png", alt="mobifone")
+				label.card(for="vinaphone") 
+					input.check_sup#vinaphone(type='radio' name='supplier' value='Vinaphone')
+					img.img_card(src="/images/vinaphone.png", alt="vinaphone")
+			h3 Choose a denomaination
+			.card_value 
+				label(for="10k")
+					input.check_val#10k(type='radio' name="card-value" value="10000")
+					span.check_tile 10.000đ
+				label(for="20k")
+					input.check_val#20k(type='radio' name="card-value" value="20000")
+					span.check_tile 20.000đ
+				label(for="30k")
+					input.check_val#30k(type='radio' name="card-value" value="30000")
+					span.check_tile 30.000đ
+				label(for="50k")
+					input.check_val#50k(type='radio' name="card-value"
+					value="50000")
+					span.check_tile 50.000đ
+				label(for="100k")
+					input.check_val#100k(type='radio' name="card-value" value="100000")
+					span.check_tile 100.000đ
+				label(for="200k")
+					input.check_val#200k(type='radio' name="card-value" value="200000")
+					span.check_tile 200.000đ
+				label(for="300k")
+					input.check_val#300k(type='radio' name="card-value" value="300000")
+					span.check_tile 300.000đ
+				label(for="500k")
+					input.check_val#500k(type='radio' name="card-value" value="500000")
+					span.check_tile 500.000đ
+			.quantity
+				h3 Amount 
+				.quantity_group
+					ion-icon.minus(name="remove-sharp")
+					input.num_quantity(type="number" min="1" max="5" value="1" name="quanlity" readonly)
+					ion-icon.plus(name="add-sharp")
+			hr.line
+			.total_money 
+				h3#total_money_card Total money: 0đ 
+				span#name_supplier Supplier  
+				br
+				span#par_card 0đ
+				br
+				span#quantity_card Quantity: x1
+			button.btn_payment_card#btnBuyCard Payment 
+		.receipt_card
+			h3 Receipt card
+			+ReceiptCard
+			+ReceiptCard
+			+ReceiptCard
+
+
+
+
+
+

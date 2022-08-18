@@ -1,0 +1,18 @@
+<!--Sidebar start-->
+.sidebar 
+    .profile_info
+        img.profile_img(src=`/uploads/${avatar}`, alt="")
+        h4 #{fullname}
+    a(href="/home" title="Home")
+        ion-icon(name="home-sharp")
+        span Home
+    a(href="/admin/post" title="Post Notification")
+        ion-icon(name="create")
+        span Post
+    a(href="/admin/approve" title="Approve Account")
+        ion-icon(name="checkmark-done-circle")
+        span Approve
+    a(href="/logout" title="Logout")
+        ion-icon(name="log-out-sharp")
+        span Logout
+<!--Sidebar end -->

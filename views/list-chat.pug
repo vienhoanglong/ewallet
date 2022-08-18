@@ -1,0 +1,33 @@
+extends ./layouts/layout
+
+block vars
+	-title = 'Chat'
+	-bodyClass = ''
+block script 
+
+block content
+	.content_chat_detail
+		.wrapper
+			section.users
+				.header
+					a.back-icon(href='/user/listChat')
+						i.fas.fa-arrow-left
+					.content-list-chat
+						img(src='/uploads/user1.png' alt='Avatar')
+						.details
+							span  Vien Hoang Long
+							br
+							span#online Online
+				.search
+					span.text User online
+				.users-list.recently-chat
+					a(href='/user/chat')
+						.content-list-chat
+							img(src='/uploads/user2.png' alt='Avatar')
+							.details
+								span#userOnline Vien Hoang Long
+						.status-dot.online
+							i.fas.fa-circle
+	
+				
+

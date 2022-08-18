@@ -1,0 +1,36 @@
+extends ./layouts/layout
+
+block vars
+	-title = 'Transfer'
+	-bodyClass = ''
+
+block content
+	block header
+		include ./blocks/header 
+	block sidebar
+		include ./blocks/sidebar
+	.content_transfer
+		.transfer
+			h3 Transfer via wallet
+			.form_transfer
+				.form_group
+					label(for="phone_transfer") Recipient phone number
+					input#phone_transfer(type="text" placeholder="Enter the recipient's phone number to transfer")
+				.form_group
+					label(for="name_transfer") Recipient name
+					input#name_transfer(type="text" readonly)
+				.form_group
+					label(for="amount_transfer") Amount to transfer
+					input#amount_transfer(type="text" placeholder="Enter amount to transfer")
+				.form_group
+					label(for="note_transfer") Note
+					textarea#note_transfer(cols="10", rows="3" placeholder="Enter your note transfer")
+				.form_group_radio
+					.group_radio 
+						input#sender_fee_transfer(type="radio" placeholder="Enter your cvv code" name="fee-transfer" value="sender")
+						label.label_fee(for="sender_fee_transfer") Sender pay fees
+					.group_radio 
+						input#receiver_fee_transfer(type="radio" placeholder="Enter your cvv code" name="fee-transfer" value="receiver")
+						label.label_fee(for="receiver_fee_transfer") Receiver pay fees
+				button#sendOTPVerify Send OTP Verify
+			.verify_otp_transfer

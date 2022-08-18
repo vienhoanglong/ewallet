@@ -1,0 +1,103 @@
+extends ./layouts/layout
+
+block vars
+	-title = 'Profile'
+	-bodyClass = 'bg2'
+	
+block content
+	block header
+		include ./blocks/header 
+	block sidebar
+		include ./blocks/sidebar
+	.content_profile
+		.content_profile_img 
+			img(src="/images/admin.png", alt="image profile")
+			.group_profile_info
+				h4 Vien Hoang Long
+				.status_profile_info 
+					span Activated
+				.group_profile_btn 
+					button#btnOpenUpload
+						ion-icon(name="create-outline")
+						span Avatar
+					button#btnOpenChangePassword
+						ion-icon(name="reload-circle-outline")
+						span Password
+					button
+						ion-icon(name="card-outline")
+						span ID Card
+		.content_profile_info
+			.group_info
+				.group_item
+					ion-icon(name="person")
+					span 0123456789
+				.group_item
+					ion-icon(name="call")
+					span 0398719657
+				.group_item
+					ion-icon(name="mail")
+					span vienhoanglong789@gmail.com
+				h4 Change Information
+				label(for="birthday_profile") Birthday 
+				input#birthday_profile(type="date" value="2000-02-11")
+				label(for="address_profile") Address 
+				input#address_profile(type="text" value="100 Đường 77")
+				button  Save Change 
+			.group_guide
+				.content_guide_profile
+					.content_img
+					span#desc A website simulating an e-wallet serving two objects customers and administrators. Please provide complete personal information to use the wallet !!!
+				span &copy; Copyright: Vien Hoang Long 
+		.modal_password#modalPassword
+			.modal
+				.icon_close_modal#btnCloseModal
+					ion-icon(name="close")
+				h4#h4 Change Password
+				label(for="password_old") Old Password 
+				.input_modal_old
+					input#password_old(type="password" placeholder="Enter your old password")
+					span
+						ion-icon#eye_old(name="eye-sharp")
+				label(for="password_new") New Password 
+				.input_modal_new
+					input#password_new(type="password" placeholder="Enter your new password" )
+					span
+						ion-icon#eye_new(name="eye-sharp")
+				label(for="password_confirm") Confirm Password 
+				.input_modal_confirm
+					input#password_confirm(type="password" placeholder="Enter your confirm password" )
+					span
+						ion-icon#eye_confirm(name="eye-sharp")
+				Button Save change
+		.modal_upload#modalUpload
+			.modal
+				.icon_close_modal#btnCloseModalUpload
+					ion-icon(name="close")
+				.container_upload
+					.group_img_upload 
+						img#img_upload(src="/images/admin.png", alt="Picture")
+				.group_file_upload
+					input#file_upload(type="file" accept="image/*")
+					span
+						ion-icon#icon_upload(name="camera")
+				button#btnUploadImg Save change 
+		.modal_upload_cardId 
+			.modal
+				.icon_close_modal#btnCloseIDCard
+					ion-icon(name="close")
+				h4#h4 Upload Card ID
+				label(for="front_upload") The Back 
+				.input_cardId_front 
+					ion-icon(name="cloud-upload-outline")
+					input#front_upload(type="file")
+					p.file_front Image The Front
+				label(for="back_upload") The Back
+				.input_cardId_back 
+					ion-icon(name="cloud-upload-outline")
+					input#back_upload(type="file")
+					p.file_back Image The Back
+				button Save change
+
+				
+
+		

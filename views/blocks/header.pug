@@ -1,0 +1,41 @@
+<!--Header start -->
+input(type="checkbox" id="check")
+header
+    label(for="check")
+        ion-icon(name="menu-sharp" id="sidebar") 
+    .left_area
+        h3 E-WALLET
+    ion-icon.btn_bar_mobile(name="menu-sharp")
+    .right_area#click_profile
+        img.nav_img(src=`/uploads/${avatar}`, alt="")
+        h5 #{fullname}
+        ion-icon#ic_dropmenu(name="chevron-down-outline")
+        .menu
+            ul
+                li
+                    a(href='#') My profile
+                li
+                    a(href='#') Edit profile
+                li
+                    a(href='/logout') Logout
+<!--Header end -->
+<!--Mobile Navbar start-->
+.mobile_sidebar
+    .mobile_bar_item
+        a(href="/user/home" title="Home")
+            span Home
+        a(href="/user/topUp" title="Top up")
+            span Top up
+        a(href="/user/transfer" title="Transfer")
+            span Transfer
+        a(href="/user/withdraw" title="Withdraw")
+            span Withdraw
+        a(href="/user/buyCard" title="Buy card")
+            span Buy card
+        a(href="/user/history" title="History")
+            span History
+        a(href="/user/listChat" title="Chat")
+            span Chat
+        a(href="/logout" title="Logout")
+            span Logout
+<!--Mobile Navbar end-->

@@ -1,0 +1,30 @@
+extends ./layouts/layout
+
+block vars
+	-title = 'Login'
+	-bodyClass = 'bg1 body_login'
+	
+block content
+	section.login 
+		.img_login
+			img(src="./images/bg-2.png", alt="") 
+		.content_login
+			h3 Login
+			span.title_login You can login account here.
+			form.form_login(action="/" method="POST")
+				if(messageError)
+					.alert_error
+						ion-icon(name="alert-outline")
+						span #{messageError}
+				label(for="username_login") Username
+				input#username_login(type="text" placeholder="Enter your username" name="username")
+				label(for="password_login") Password
+				input#password_login(type="password" placeholder="Enter your password" name="password")
+				.group_login
+					.group_remember 
+						input(type="checkbox") 
+						label Remember me 
+					a(href="/forgot") Forgot password? 
+				button login
+			span.path_register Don't have an account?
+				a.link_register(href="/register") Register now

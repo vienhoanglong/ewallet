@@ -1,0 +1,31 @@
+extends ./layouts/layout
+
+block vars
+	-title = 'Chat'
+	-bodyClass = ''
+block script 
+
+block content
+	.content_chat_detail
+		.wrapper
+			section.chat-area
+				.header
+					a.back-icon(href='/user/listChat')
+						i.fas.fa-arrow-left
+					img#avatar(src='/uploads/user1.png' alt='Avatar')
+					.details
+						input#id_des(type='hidden' value='')
+						input#id_from(type='hidden' value='')
+						span  Vien Hoang Long
+						br
+						span#online Online
+				#chat_list.chat-box
+				form.typing-area(action='')
+					input.incoming_id(type='text' name='incoming_id' value='' hidden='')
+					input#message.input-field(type='text' name='message' placeholder='Nhập nội dung...' autocomplete='off')
+					button#send_message
+						i.fab.fa-telegram-plane
+
+	
+				
+

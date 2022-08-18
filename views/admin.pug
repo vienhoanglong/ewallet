@@ -1,0 +1,45 @@
+extends ./layouts/layout
+
+block vars
+	-title = 'Home'
+	-bodyClass = ''
+
+block content
+	block header
+		include ./blocks/header-admin 
+	block sidebar
+		include ./blocks/sidebar-admin
+	.content_home
+		.card_info.card_function
+				.title_info 
+					span Function Wallet
+					ion-icon(name="ellipsis-vertical-outline")
+				.content_info
+					.function_group
+						a.function_home.topup_home(href="#")
+							ion-icon(name="create")
+							span List Post
+						a.function_home.transfer_home(href="#")
+							ion-icon(name="checkmark-done-circle")
+							span Approve
+						a.function_home.withdraw_home(href="#")
+							ion-icon(name="lock-open")
+							span Unlock
+						a.function_home.buycard_home(href="#")
+							ion-icon(name="library")
+							span List Accept
+		.card_info.card_function
+			.form_post_noti
+				h4 Create notification
+				.span_error
+				.form_noti
+					label(for="post_noti_title") Title notification
+					br
+					input#post_noti_title(type="text" placeholder="Enter the title of notice here..." name="title_posts")
+					br
+					label(for="post_noti") Description notification
+					br
+					textarea#post_noti_desc(name="desc_posts", cols="30", rows="5" placeholder="Enter the description of the notice here...")
+				button#btnPostNoti Post
+        
+	

@@ -1,0 +1,23 @@
+extends ./layouts/layout
+
+block vars
+	if namePage 
+		-title = namePage
+	-bodyClass = 'bodyUnactivated'
+block content
+	block header
+		include ./blocks/header 
+	block sidebar
+		include ./blocks/sidebar
+	.content_unactivated
+		.group_unactivated 
+			h1 Account waiting active
+			span Your account has not been activated, Please wait for an admin to confirm
+			br
+			.lds-ellipsis
+				div
+				div
+				div
+				div
+			br
+			span &copy; Copyright: Vien Hoang Long

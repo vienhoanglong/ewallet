@@ -1,0 +1,10 @@
+extends ./layouts/layout
+
+block vars
+	-title = '404'
+	-bodyClass = 'bgErrorPage'
+block content
+	.content_error 
+		h1 404
+		p We can't find the page you're looking for
+		a(href="#") Go Back Home

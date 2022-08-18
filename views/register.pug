@@ -1,0 +1,52 @@
+extends ./layouts/layout
+
+block vars
+	-title = 'Regisster'
+	-bodyClass = 'bg1 body_register'
+
+block plugins
+	link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.17/css/intlTelInput.css')
+	script(src='https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.17/js/intlTelInput.min.js')
+block content
+	section.register  
+		.content_register
+			h3 Create new account
+			form.form_register(action="/register" method="POST" enctype='multipart/form-data')
+				if(messageError)
+					.alert_error
+						ion-icon(name="alert-outline")
+						span #{messageError}
+				if(messageSuccess)
+					.alert_success
+						ion-icon(name="checkmark-circle-sharp")
+						span #{messageSuccess} 
+						a(href="/login") Login here
+				label(for="fullname_register") Fullname
+				input#fullname_register(type="text" placeholder="Enter your fullname" name='fullname')
+				label(for="phone_register") Phone number
+				input#phone_register(type="tel" name="phone")
+				label(for="address_register") Address
+				input#address_register(type="text" placeholder="Enter your address" name="address")
+				label(for="birthday_register") Birth day
+				input#birthday_register(type="date" placeholder="Enter your birth day" name="birthday")
+				label(for="email_register") Email
+				input#email_register(type="email" placeholder="Enter your email" name="email")
+				label(for="front_register") The Front
+				.fileFront 
+					ion-icon(name="cloud-upload-outline")
+					input#front_register(type="file" name="idCardFront" required)
+					p.file_name_front Image The Front
+				label(for="back_register") The Back
+				.fileBack 
+					ion-icon(name="cloud-upload-outline")
+					input#back_register(type="file" name="idCardBack" required)
+					p.file_name_back Image The Back
+				button Register
+				span#span_href Already have an account?
+					a(href="/") Log in
+		.img_register
+			img(src="./images/bg-1.png", alt="")
+		
+
+	   
+

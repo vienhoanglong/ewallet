@@ -1,0 +1,37 @@
+extends ./layouts/layout
+
+block vars
+	-title = 'With draw'
+	-bodyClass = ''
+	
+block content
+	block header
+		include ./blocks/header 
+	block sidebar
+		include ./blocks/sidebar
+	.content_withdraw
+		.withdraw
+			h3 With draw to wallet
+			.form_withdraw
+				.span_error_wd
+				.form_group
+					label(for="card_number_wd") Card number
+					input#card_number_wd(type="text" placeholder="Enter your card number" name="card_number")
+				.form_group
+					label(for="expiry_date_wd") Expiry date
+					input#expiry_date_wd(type="date" name="expiry_date")
+				.form_group
+					label(for="cvv_wd") CVV code
+					input#cvv_wd(type="text" placeholder="Enter your cvv code" name="cvv")
+				.form_group
+					label(for="money_wd") Money withdraw
+					input#money_wd(type="text" placeholder="Enter your money withdraw" name="money")
+				.form_group
+					label(for="note_wd") Note
+					textarea#note_wd(cols="30", rows="5" placeholder="Enter your note top up" name="note")
+				button#btnWithdraw Withdraw
+		.receipt_card
+			h3 Receipt withdraw
+			+ReceiptCard
+			+ReceiptCard
+			+ReceiptCard

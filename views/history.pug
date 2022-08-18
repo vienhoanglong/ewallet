@@ -1,0 +1,70 @@
+extends ./layouts/layout
+
+block vars
+	-title = 'History'
+	-bodyClass = 'bodyHistory'
+	
+block content
+	block header
+		include ./blocks/header 
+	block sidebar
+		include ./blocks/sidebar
+	.content_history
+		h3 Table History Transactions
+		.group_filter_history
+			span Filter
+			.filter_history 
+				select#selectHistory(name="history") 
+					option(value="all") All 
+					option(value="transfer") History transfer
+					option(value="topUp") History top up
+					option(value="getMoney") History get money
+					option(value="withdraw") History withdraw 
+					option(value="buyCard") History buy card
+		table.content_table_history#tableHistory
+			thead
+				tr
+					th No
+					th Transaction type
+					th Money 
+					th Timestamp
+					th Status 
+					th More
+			tbody#contentTable
+				each val, key in history
+					tr 
+						td(data-label="No")=key
+						if val.typeTransaction === 0
+							td(data-label="Transaction type") Top up
+						else if val.typeTransaction === 1
+							td(data-label="Transaction type") Transfer
+						else if val.typeTransaction === 2
+							td(data-label="Transaction type") Withdraw
+						else if val.typeTransaction === 3
+							td(data-label="Transaction type") Buy Card
+						else
+							td(data-label="Transaction type") Get Money
+						td(data-label="Money")=val.money
+						td(data-label="Timestamp")=val.timeCreate
+						if val.statusTransaction == 0
+							td(data-label="Status")
+								span.status_history_sucess Success
+						else if val.statusTransaction == 1
+							td(data-label="Status")
+								span.status_history_fail Fail 
+						else
+							td(data-label="Status")
+								span.status_history_wait Wait
+						td(data-label="More" data-id=val._id) Details
+		.pagination
+			a(href='#') Prev
+			a(href='#') 1
+			a(href='#') 2
+			a(href='#') 3
+			a(href='#') 4
+			a(href='#') 5
+			a(href='#') Next
+	block modal
+		include ./blocks/modal
+
+

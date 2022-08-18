@@ -1,0 +1,34 @@
+<!--Sidebar start-->
+.sidebar 
+    .profile_info
+        img.profile_img(src=`/uploads/${avatar}`, alt="")
+        h4 #{fullname}
+        .total_money#btnShowMoney
+            span#spanShowMoney(data-money=money) **********
+            ion-icon#eyeShowMoney(name="eye-off-sharp")
+            input#idUser(type="hidden" value=id)
+    a(href="/user" title="Home")
+        ion-icon(name="home-sharp")
+        span Home
+    a(href="/user/topUp" title="Top up")
+        ion-icon(name="server-sharp")
+        span Top up
+    a(href="/user/transfer" title="Transfer")
+        ion-icon(name="arrow-redo-sharp")
+        span Transfer
+    a(href="/user/withdraw" title="Withdraw")
+        ion-icon(name="download-sharp")
+        span Withdraw
+    a(href="/user/buyCard" title="Buy card")
+        ion-icon(name="basket-sharp")
+        span Buy card
+    a(href="/user/history" title="History")
+        ion-icon(name="reader")
+        span History
+    a(href="/user/listChat" title="Chat")
+        ion-icon(name="chatbubble")
+        span Chat
+    a(href="/logout" title="Logout")
+        ion-icon(name="log-out-sharp")
+        span Logout
+<!--Sidebar end -->

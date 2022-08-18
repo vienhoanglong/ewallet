@@ -1,0 +1,32 @@
+extends ./layouts/layout
+
+block vars
+	-title = 'Top up'
+	-bodyClass = ''
+	
+block content
+	block header
+		include ./blocks/header 
+	block sidebar
+		include ./blocks/sidebar
+	.content_top_up
+		.top_up
+			h3 Top up to wallet
+			.form_top_up
+				.span_error
+				.form_group
+					label(for="card_number_tu") Card number
+					input#card_number_tu(type="text" placeholder="Enter your card number" name="card_num")
+				.form_group
+					label(for="expiry_date_tu") Expiry date
+					input#expiry_date_tu(type="date" name="expiry_date")
+				.form_group
+					label(for="cvv_tu") CVV code
+					input#cvv_tu(type="text" placeholder="Enter your cvv code" name="cvv")
+				.form_group
+					label(for="money_tu") Money top up
+					input#money_tu(type="text" placeholder="Enter your money top up" name="money")
+				button#btnTopUp Top up
+		.receipt_card
+			h3 Receipt top up
+			+ReceiptCard

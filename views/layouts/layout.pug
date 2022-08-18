@@ -1,0 +1,35 @@
+block mixins
+	include ../blocks/mixins
+block vars
+	-title = 'E-wallet'
+	-bodyClass = ''
+doctype html
+html(lang="en")
+	head
+		meta(charset="utf-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0")
+		link(rel="icon" type="image/png" href="/images/ewallet-logo.png")
+		link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css')
+		link(rel='preconnect' href='https://fonts.googleapis.com')
+		link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+		link(href='https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700;800&display=swap' rel='stylesheet')
+		link(href='https://fonts.googleapis.com/css2?family=Paytone+One&display=swap' rel='stylesheet')
+		link(rel='stylesheet' type="text/css" href='/styles/style.css')
+		script(src='https://cdn.jsdelivr.net/npm/sweetalert2@11.4.18/dist/sweetalert2.all.min.js')
+		script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js')
+		script(src='https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js')
+		script(type='module' src='https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js')
+		script(nomodule='' src='https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js')
+		script(src='https://cdn.socket.io/4.5.0/socket.io.min.js')
+		title=title
+		block plugins
+	body(class=bodyClass)
+		block content
+		
+		block modal
+		//- Script
+		script(src='/js/main.js')
+		script(src='/js/ajax.js')
+		block script
+		

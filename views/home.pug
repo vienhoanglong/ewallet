@@ -1,0 +1,65 @@
+extends ./layouts/layout
+
+block vars
+	-title = 'Home'
+	-bodyClass = ''
+block script 
+	script(src='/js/chart.js')
+block content
+	block header
+		include ./blocks/header 
+	block sidebar
+		include ./blocks/sidebar
+	.content_home
+		.card_group
+			.card_info.card_profile
+				.title_info 
+					span Master Wallet 
+					ion-icon(name="ellipsis-vertical-outline")
+				.content_info
+					span Estimated Balance
+					.status_info 
+						span Active
+					h4 #{money}đ
+					.fullname_info
+						ion-icon(name="people-sharp")
+						span #{fullname} 
+					.phone_info
+						ion-icon(name="call-sharp")
+						span #{phone}
+			.card_info.card_function
+				.title_info 
+					span Function Wallet 
+					ion-icon(name="ellipsis-vertical-outline")
+				.content_info
+					.function_group
+						a.function_home.topup_home(href="user/topUp")
+							ion-icon(name="server-sharp")
+							span Top-up
+						a.function_home.transfer_home(href="user/transfer")
+							ion-icon(name="arrow-redo-sharp")
+							span Transfer
+						a.function_home.withdraw_home(href="user/withdraw")
+							ion-icon(name="download-sharp")
+							span Withdraw
+						a.function_home.buycard_home(href="user/buyCard")
+							ion-icon(name="basket-sharp")
+							span Buy card
+						a.function_home.chat_home(href="/user/listChat" title="Chat")
+							ion-icon(name="chatbubble")
+							span Chat
+						a.function_home.history_home(href="user/history")
+							ion-icon(name="reader")
+							span History
+		hr.line_home
+		.dataTopUp(data-chart=dataChart.topUp data-name="Top Up")
+		.dataWithdraw(data-chart=dataChart.withdraw data-name="Withdraw")
+		.dataTransfer(data-chart=dataChart.transfer data-name="Transfer")
+		.dataGetMoney(data-chart=dataChart.getMoney data-name="Get Money")
+		.dataBuyCard(data-chart=dataChart.buyCard data-name="Buy Card")
+		.chart
+			.chart_content_first
+				canvas.chart_home#myChart(width="400" height="400")
+			.chart_content_second
+				canvas.chart_home#myChart1(width="400" height="400")
+	
